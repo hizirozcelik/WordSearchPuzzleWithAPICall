@@ -2,10 +2,10 @@ package com.ozcelik.beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class WORD {
+public class Word {
     public final String word;
 
-    public WORD(@JsonProperty("word") String word) {
+    public Word(@JsonProperty("word") String word) {
         this.word = word;
     }
 }

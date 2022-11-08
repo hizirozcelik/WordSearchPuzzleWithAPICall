@@ -1,6 +1,7 @@
 package com.ozcelik;
 
 import com.ozcelik.Utility.HelperMethods;
+import com.ozcelik.Utility.WriteToFile;
 import com.ozcelik.beans.Cell;
 
 import java.util.Arrays;
@@ -19,9 +20,9 @@ public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
         // parameters with default values
-        int row = 30;
-        int column = 40;
-        int numberOfWord = 40;
+        int row = 20;
+        int column = 30;
+        int numberOfWord = 35;
         int difficultyLevel = 2;
         int wordType = 1;
         HelperMethods checkInput = new HelperMethods();
@@ -32,8 +33,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("What would be the puzzle difficulty level");
         System.out.println("Please enter <1> for basic <20x20>");
-        System.out.println("Please enter <2> for medium <30x40>");
-        System.out.println("Please enter <3> for advanced <40x60>");
+        System.out.println("Please enter <2> for medium <20x30>");
+        System.out.println("Please enter <3> for advanced <40x30>");
         String userInput = sc.nextLine();
 
         // user input validation based on menu items and valid integers entry
@@ -51,13 +52,13 @@ public class Main {
             column = 20;
         }
         if (difficultyLevel == 3) {
-            numberOfWord = 60;
+            numberOfWord = 50;
             row = 40;
-            column = 60;
+            column = 30;
         }
 
         // User inputs for types of word
-        System.out.println("Please select the words' types for the puzzle");
+        System.out.println("Please select type for the words");
         System.out.println("Please enter <1> for mixed");
         System.out.println("Please enter <2> for nouns>");
         System.out.println("Please enter <3> for verbs>");
@@ -104,6 +105,8 @@ public class Main {
             sno++;
             System.out.println(sno + ". " + item);
         }
+        WriteToFile toFile = new WriteToFile();
+        toFile.createAFile(grid, sorted, row, column);
         System.out.println("Enjoy solving the puzzle");
         System.out.println("Created by Hizir Ozcelik @Oakville");
     }

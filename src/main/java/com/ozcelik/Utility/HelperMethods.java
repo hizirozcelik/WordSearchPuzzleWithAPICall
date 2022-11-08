@@ -3,7 +3,7 @@ package com.ozcelik.Utility;
 
 import com.ozcelik.APIUtility.JsonBodyHandler;
 import com.ozcelik.beans.Cell;
-import com.ozcelik.beans.WORD;
+import com.ozcelik.beans.Word;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -61,7 +61,7 @@ public class HelperMethods {
                 .build();
 
         // use the client to send the request
-        var responseFuture = client.sendAsync(request, new JsonBodyHandler<>(WORD.class));
+        var responseFuture = client.sendAsync(request, new JsonBodyHandler<>(Word.class));
 
         // We can do other things here while the request is in-flight
 
